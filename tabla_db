@@ -1,0 +1,59 @@
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+public class tabla_db {
+    public DefaultTableModel mostrarClientes() {
+        String[] nombresColumnas = {"id_user", "nombre_user", "apellido_user", "contraseña_user", "correo", "telefono"};
+        String[] registros = new String[6];
+
+        DefaultTableModel modelo = new DefaultTableModel(null, nombresColumnas);
+        String sql = "SELECT * FROM registros";
+        Connection cn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+
+        try {
+            cn = conexionOn.conexion();
+
+            pst = cn.prepareStatement(sql);
+
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                registros[0] = rs.getString("id_user");
+                registros[1] = rs.getString("nombre_user");
+                registros[2] = rs.getString("apellido_user");
+                registros[3] = rs.getString("contraseña_user");
+                registros[4] = rs.getString("correo");
+                registros[5] = rs.getString("telefono");
+
+                modelo.addRow(registros);
+
+            }
+
+        } catch (SQLException e) {
+
+            JOptionPane.showMessageDialog(null, e.getLocalizedMessage());
+
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+
+                if (pst != null) {
+                    pst.close();
+                }
+
+                if (cn != null) {
+                    cn.close();
+                }
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
+        return modelo;
+    }
+
+}
