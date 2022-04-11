@@ -3,10 +3,12 @@ import javax.swing.JOptionPane;
 
 
 public class usuarios extends javax.swing.JFrame {
+   
 
    
     public usuarios() {
         initComponents();
+        
         this.setTitle("Inicio Sesion");
         this.setLocation(900,150);
     }
@@ -124,11 +126,18 @@ this.dispose();// TODO add your handling code here:
     }                                      
 
     private void biniciaActionPerformed(java.awt.event.ActionEvent evt) {                                        
-   sistem op = new sistem();
-               op.setVisible(true);
-               this.dispose();
+    if(F_usuarios1.getText().isEmpty()){
+       JOptionPane.showMessageDialog(null,"Te falta llenar esto");
+       
+       if( fu_password1.getText().isEmpty()){
+            
         
-
+       }
+      
+   }
+    else {sistem op = new sistem();
+               op.setVisible(true);
+               this.dispose();}
     }                                       
 
     /**
@@ -178,3 +187,4 @@ this.dispose();// TODO add your handling code here:
     private javax.swing.JLabel jLabel4;
     // End of variables declaration                   
 }
+
