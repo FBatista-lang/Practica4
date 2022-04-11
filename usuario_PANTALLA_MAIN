@@ -1,0 +1,180 @@
+import java.sql.Connection;
+import javax.swing.JOptionPane;
+
+
+public class usuarios extends javax.swing.JFrame {
+
+   
+    public usuarios() {
+        initComponents();
+        this.setTitle("Inicio Sesion");
+        this.setLocation(900,150);
+    }
+    public void validaraccseso(){
+        int result = 0;
+        try{
+            String nick =F_usuarios1.getText();
+            String password=String.valueOf(fu_password1.getPassword());
+            
+            String sql ="Select * from registros";
+        
+        }
+        catch (Exception e){
+        }
+    
+    
+    
+    }
+
+  
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    private void initComponents() {
+
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        bregistra = new javax.swing.JButton();
+        F_usuarios1 = new javax.swing.JTextField();
+        fu_password1 = new javax.swing.JPasswordField();
+        bsalir = new javax.swing.JButton();
+        binicia = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        jLabel1.setText("Inicia Sesion");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel2.setText("Nick");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 20));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI Light", 0, 18)); // NOI18N
+        jLabel4.setText("Password");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+
+        bregistra.setBackground(new java.awt.Color(102, 102, 255));
+        bregistra.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        bregistra.setText("Registrate");
+        bregistra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bregistraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bregistra, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, 90, 40));
+
+        F_usuarios1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                F_usuarios1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(F_usuarios1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 180, -1));
+
+        fu_password1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fu_password1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(fu_password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 180, -1));
+
+        bsalir.setBackground(new java.awt.Color(102, 102, 255));
+        bsalir.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        bsalir.setText("Salir");
+        bsalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bsalirActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bsalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 90, 40));
+
+        binicia.setBackground(new java.awt.Color(102, 102, 255));
+        binicia.setFont(new java.awt.Font("Serif", 0, 14)); // NOI18N
+        binicia.setText("Entra");
+        binicia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                biniciaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(binicia, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 320, 90, 40));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fondo/fondo-login-web.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 550));
+
+        pack();
+    }// </editor-fold>                        
+
+    private void bregistraActionPerformed(java.awt.event.ActionEvent evt) {                                          
+registro_usuarios rc = new registro_usuarios(); 
+rc.setVisible(true);
+this.dispose();// TODO add your handling code here:
+    }                                         
+
+    private void F_usuarios1ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+    }                                           
+
+    private void fu_password1ActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        // TODO add your handling code here:
+    }                                            
+
+    private void bsalirActionPerformed(java.awt.event.ActionEvent evt) {                                       
+        this.dispose();
+    }                                      
+
+    private void biniciaActionPerformed(java.awt.event.ActionEvent evt) {                                        
+   sistem op = new sistem();
+               op.setVisible(true);
+               this.dispose();
+        
+
+    }                                       
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(usuarios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new usuarios().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify                     
+    private javax.swing.JTextField F_usuarios1;
+    private javax.swing.JButton binicia;
+    private javax.swing.JButton bregistra;
+    private javax.swing.JButton bsalir;
+    private javax.swing.JPasswordField fu_password1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    // End of variables declaration                   
+}
